@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TheJudgeOfAVLTree/TheJudgeOfAVLTree.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:list/list.xcodeproj">
    </FileRef>
    <FileRef
@@ -14,7 +17,7 @@
       location = "group:HomeWork1/HomeWork1.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Qselect/Qselect.xcodeproj">
+      location = "group:/Users/xbw/Documents/Work/learn/LearnAlgorithm/Qselect/Qsort.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:GraphOfTopSort/GraphOfTopSort.xcodeproj">
