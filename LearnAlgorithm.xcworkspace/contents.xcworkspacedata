@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:list/list.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Dijkstra/Dijkstra.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Tree/Tree.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HomeWork1/HomeWork1.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Qselect/Qselect.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GraphOfTopSort/GraphOfTopSort.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:QueueADTbyArray/QueueADTbyArray.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:QueueADTbyList/QueueADTbyList.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TopSort/TopSort.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StackADT/StackADT.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StackADTbyArray/StackADTbyArray.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Sort/Sort.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InsertionSort/InsertionSort.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TwoStackInOneArray/TwoStackInOneArray.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PriorityQueue/PriorityQueue.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HashTable/HashTable.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AVLTreeInC/AVLTreeInC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AVLTree/AVLTree.xcodeproj">
+   </FileRef>
+</Workspace>
