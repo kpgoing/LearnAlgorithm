@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:TheJudgeOfAVLTree/TheJudgeOfAVLTree.xcodeproj">
-   </FileRef>
+   <Group
+      location = "group:TheJudgeOfAVLTree"
+      name = "TheJudgeOfAVLTree">
+      <Group
+         location = "group:TheJudgeOfAVLTree"
+         name = "TheJudgeOfAVLTree">
+         <FileRef
+            location = "group:main.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:Tree.h">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:Qsort"
+      name = "Qsort">
+      <Group
+         location = "group:Qsort"
+         name = "Qsort">
+         <FileRef
+            location = "group:main.cpp">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:list/list.xcodeproj">
    </FileRef>
@@ -15,9 +37,6 @@
    </FileRef>
    <FileRef
       location = "group:HomeWork1/HomeWork1.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/xbw/Documents/Work/learn/LearnAlgorithm/Qselect/Qsort.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:GraphOfTopSort/GraphOfTopSort.xcodeproj">
