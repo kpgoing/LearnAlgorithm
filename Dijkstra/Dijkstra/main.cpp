@@ -58,7 +58,7 @@ void Dijkstra(int G[][NumVertex],Table T)
     V = T[0].dist;
     for (; ; ) {
         for (int i = 0; i < NumVertex; i++) {
-            V = T[i].dist < V ? T[i].dist : V;
+            V = ( T[i].dist < V ? T[i].dist : V );
         }
         
         T[V].Known = 1;
@@ -89,7 +89,9 @@ int main(int argc, const char * argv[]) {
     };
     Table T = (Table)malloc(10 * sizeof(struct TableCell));
     InitTable(1, G, T);
+    std::cout<<"1"<<std::endl;
     Dijkstra(G, T);
+     std::cout<<"2"<<std::endl;
     PrintPath(1, T);
     return 0;
 }

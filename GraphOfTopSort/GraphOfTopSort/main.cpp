@@ -44,7 +44,6 @@ int main(int, char const**)
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
-    
 //    int order2 = 0;
     vector<int> order2(SIZE_GRAPH,0);
     HashTable Graph;
