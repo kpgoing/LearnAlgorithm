@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Dijkstra.xcscheme</key>
+		<key>DijkstraBySFML.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>17</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6F6EE63C1BF5CA5A00B0B706</key>
+		<key>6F8108091C20347000F00DC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

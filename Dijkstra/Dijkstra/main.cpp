@@ -8,9 +8,8 @@
 
 #include <iostream>
 #include "list.h"
-#define NumVertex 5
+#define NumVertex 7
 #define NotAVertex -1
-typedef int Vertex;
 struct TableCell
 {
     List* Header;
@@ -18,7 +17,7 @@ struct TableCell
     int dist;
     Vertex Path;
 };
-
+std::string NAME = "abcdefg";
 typedef struct TableCell *Table;
 
 
@@ -29,7 +28,7 @@ void InitTable(Vertex Start, int G[][NumVertex],Table T)
         *(T[i].Header) = (List)malloc(sizeof(struct Node));
         (*(T[i].Header))->Next = NULL;
         for (int j = 0; j < NumVertex; j++) {
-            if (i != j) {
+            if (G[i][j]) {
                 Insert(j, *T[i].Header, FindLast(*T[i].Header));
             }
         }
@@ -49,49 +48,64 @@ void PrintPath(Vertex V,Table T)
         PrintPath(T[V].Path, T);
         printf(" TO ");
     }
-    printf("%d",V);
+    printf("%c",NAME[V]);
 }
 
 void Dijkstra(int G[][NumVertex],Table T)
 {
     Vertex V, W;
     V = T[0].dist;
+    int N = 0;
     for (; ; ) {
         for (int i = 0; i < NumVertex; i++) {
-            V = ( T[i].dist < V ? T[i].dist : V );
+//            V = ( T[i].dist < V ? T[i].dist : V );
+            if (T[i].dist < V && !T[i].Known) {
+                V = T[i].dist;
+                N = i;
+            }
         }
         
-        T[V].Known = 1;
-        Position P = *T[V].Header;
+        if(V == INT16_MAX){
+            break;
+        }
+        
+        T[N].Known = 1;
+        Position P = *T[N].Header;
         while(!IsEmpty(P)) {
             P = P->Next;
             W = P->Element;
             if (!T[W].Known) {
-                if (T[V].dist + G[V][W] < T[W].dist) {
-                    T[W].dist = T[V].dist + G[V][W];
-                    T[W].Path = V;
+                if (T[N].dist + G[N][W] < T[W].dist) {
+                    T[W].dist = T[N].dist + G[N][W];
+                    T[W].Path = N;
                 }
             }
         }
-        
+        V = INT16_MAX;
     }
 }
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 
-    int G[5][5] = {
-        { 0,1,1,1,1},
-        { 1,0,1,1,1},
-        { 1,1,0,1,1},
-        { 1,1,1,0,1},
-        { 1,1,1,1,0},
+    int G[7][7] = {
+        {0,15,2,12,0,0,0},
+        {0,0,0,0,4,0,0},
+        {0,0,0,0,8,4,0},
+        {0,0,0,0,0,0,3},
+        {0,0,0,0,0,0,9},
+        {0,0,0,0,0,0,10},
+        {0,4,0,0,0,0,0}
     };
-    Table T = (Table)malloc(10 * sizeof(struct TableCell));
-    InitTable(1, G, T);
+    Table T = (Table)malloc(NumVertex * sizeof(struct TableCell));
+    InitTable(0, G, T);
+    for (int i = 0 ; i < NumVertex ; i++) {
+        ShowAllElement(*T[i].Header);
+    }
     std::cout<<"1"<<std::endl;
     Dijkstra(G, T);
      std::cout<<"2"<<std::endl;
-    PrintPath(1, T);
+    PrintPath(6, T);
+    std::cout<<std::endl;
     return 0;
 }

@@ -49,7 +49,7 @@ void dfs(Table T,int N)
 
 int main(int argc, char const *argv[])
 {
-    Table T;
+    Table T = (Table)malloc(10 * sizeof(struct TableCell));
     InitTable(graph,T);
     dfs(T,0);
     return 0;

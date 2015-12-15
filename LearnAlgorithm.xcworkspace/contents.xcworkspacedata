@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:DijkstraBySFML/DijkstraBySFML.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:dfsByList"
+      name = "dfsByList">
+      <FileRef
+         location = "group:list.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:list.h">
+      </FileRef>
+      <FileRef
+         location = "group:main.c">
+      </FileRef>
+   </Group>
    <Group
       location = "group:TheJudgeOfAVLTree"
       name = "TheJudgeOfAVLTree">
