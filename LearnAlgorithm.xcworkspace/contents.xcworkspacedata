@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MaxSonString/MaxSonString.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MatrixChain/MatrixChain.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DijkstraBySFML/DijkstraBySFML.xcodeproj">
    </FileRef>
    <Group
