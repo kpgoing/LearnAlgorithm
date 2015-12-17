@@ -75,5 +75,6 @@ int main(int argc, const char * argv[]) {
     }
     cout<<str<<endl;
     FindTheWay(LastChange, 1, 4);
+    cout<<endl;
     return 0;
 }

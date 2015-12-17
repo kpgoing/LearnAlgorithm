@@ -20,6 +20,7 @@
 #include <iostream>
 #include "list.h"
 #include <random>
+#include <sstream>
 #include "Vertex.hpp"
 #define NumVertex 7
 #define NotAVertex -1
@@ -49,6 +50,9 @@ vector<sf::CircleShape*> circles;
 vector<sf::VertexArray*> lines;
 vector<sf::VertexArray*> Pathlines;
 vector<sf::Text*> names;
+vector<sf::Text*> nums;
+sf::Font font;
+int intnum = 1;
 typedef struct TableCell *Table;
 
 void InitTable(int Start, int G[][NumVertex],Table T)
@@ -97,6 +101,17 @@ void PrintPath(int V,Table T)
 {
     if (T[V].Path != NotAVertex) {
         Pathlines.push_back(DrawLineInBlueColor(Vertexs[Vertexs[V].Path].getTheCornerOfCircle(), Vertexs[V].getTheCornerOfCircle()));
+        stringstream ss;
+        ss<<intnum;
+        intnum++;
+        string strnum = ss.str();
+        sf::Text* num = new sf::Text(strnum,font,20);
+        num->setColor(sf::Color::Red);
+        sf::Vector2f pOfNum =(Vertexs[Vertexs[V].Path].getTheCornerOfCircle() + Vertexs[V].getTheCornerOfCircle());
+        pOfNum.x /= 2;
+        pOfNum.y /= 2;
+        num->setPosition(pOfNum);
+        nums.push_back(num);
         PrintPath(T[V].Path, T);
         printf(" TO ");
     }
@@ -181,7 +196,6 @@ int main(int, char const**)
     }
     std::cout<<"1"<<std::endl;
     Dijkstra(G, T);
-    sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
@@ -207,12 +221,6 @@ int main(int, char const**)
         
     }
     
-//    for(auto e : Vertexs)
-//    {
-//        if (e.Path != NotAVertex) {
-//            lines.push_back(DrawLine(Vertexs[e.Path].getTheLeftUpPointOfCircle(), e.getTheLeftUpPointOfCircle()));
-//        }
-//    }
     for (int i = 0; i < NumVertex; i++) {
         for (int j = 0; j < NumVertex; j++) {
             if (G[i][j]) {
@@ -261,13 +269,20 @@ int main(int, char const**)
         {
             window.draw(*e);
         }
-        for(auto e : Pathlines)
-        {
-            window.draw(*e);
+        for (int i = 0; i < Pathlines.size(); i++) {
+            window.draw(*Pathlines[i]);
+            stringstream ss;
+            ss<<Pathlines.size()-i;
+            nums[i]->setString(ss.str());
+            window.draw(*nums[i]);
         }
-//        for(vector<sf::VertexArray*>::reverse_iterator rit = lines.rbegin();rit!=lines.rend(); rit--)
+//        for(auto e : Pathlines)
 //        {
-//            window.draw(**rit);
+//            window.draw(*e);
+//        }
+//        for(auto e : nums)
+//        {
+//            window.draw(*e);
 //        }
         // Update the window
         window.display();

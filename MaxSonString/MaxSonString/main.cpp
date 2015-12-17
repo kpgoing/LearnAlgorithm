@@ -15,6 +15,7 @@ void MaxSonString(string str)
 {
     int N = (int)str.size();
     int MAX = 1;
+    int MAXid = 0;
     vector<int>lengthOfEachChar(N,0);//用于存放f(i)值；
     lengthOfEachChar[0] = 1;//以第a1为末元素的最长递增子序列长度为1；
     for(int i = 1;i<N;i++)//循环n-1次
@@ -24,15 +25,21 @@ void MaxSonString(string str)
         {
             if(str[j]<str[i]&&lengthOfEachChar[j]>lengthOfEachChar[i]-1)
                 lengthOfEachChar[i]=lengthOfEachChar[j]+1;//更新f[i]的值。
-            MAX = lengthOfEachChar[i] > MAX ? lengthOfEachChar[i] : MAX;
+            if(lengthOfEachChar[i] > MAX){
+                MAX = lengthOfEachChar[i];
+                MAXid = i;
+            }
+            
         }
     }
     cout<<MAX<<endl;
+    cout<<str.substr(MAXid - MAX + 1 ,MAX)<<endl;
 }
 
 
 int main(int argc, const char * argv[]) {
-    string str = "abcacacacacacacabcdefg";
+    string str = "abcacacacacacacabcdefaaaa";
+    cout<<str<<endl;
     MaxSonString(str);
     return 0;
 }
